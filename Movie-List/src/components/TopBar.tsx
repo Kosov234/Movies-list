@@ -9,10 +9,22 @@ export default function TopBar() {
       title="Movie List"
       rightContent={
         <Container>
-          <Link as={RouterLink} to="/">
+          <Link
+            color="white"
+            underline="none"
+            as={RouterLink}
+            to="/"
+            style={{ margin: "15px" }}
+          >
             Home
           </Link>
-          <Link as={RouterLink} to="/advanced_search">
+          <Link
+            color="white"
+            underline="none"
+            as={RouterLink}
+            to="/advanced_search"
+            style={{ margin: "15px" }}
+          >
             Advanced Search
           </Link>
         </Container>

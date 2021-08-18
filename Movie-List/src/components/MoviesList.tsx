@@ -1,12 +1,35 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { Image, Grid } from "@toptal/picasso";
+import React from "react";
+import IMovie from "../interfaces/movie";
+import { Link as RouterLink } from "react-router-dom";
 
-export default function MoviesList() {
-  const { search } = window.location;
-  const [query, setQuery] = useState(new URLSearchParams(search).get("s"));
-
-  useEffect(() => {
-    console.log(query);
-  });
-
-  return <Fragment></Fragment>;
+interface MoviesListProps {
+  movies: IMovie[];
 }
+
+function MoviesList({ movies }: MoviesListProps) {
+  return (
+    <Grid justifyContent="center" wrap="wrap">
+      {movies.map((movie: IMovie) => {
+        return (
+          <Grid.Item small={3} key={movie.imdbID}>
+            <RouterLink to={`/movies/${movie.imdbID}`}>
+              <Image
+                alt="Default image"
+                src={movie.Poster}
+                style={{ height: "450px", width: "300px" }}
+              />
+            </RouterLink>
+            <h4>
+              {movie.Title.length < 33
+                ? movie.Title
+                : movie.Title.slice(0, 33) + "..."}
+            </h4>
+          </Grid.Item>
+        );
+      })}
+    </Grid>
+  );
+}
+
+export default MoviesList;

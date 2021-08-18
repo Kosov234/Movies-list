@@ -7,8 +7,7 @@ import axios from "axios";
 
 const HomePage: React.FunctionComponent<{}> = (props) => {
   const [value, setValue] = useState("");
-
-  let moviesList: IMovie[] = [];
+  const [moviesList, setMoviesList] = useState([]);
 
   const onChange = (e: any) => setValue(e.target.value);
 
@@ -18,8 +17,7 @@ const HomePage: React.FunctionComponent<{}> = (props) => {
     const data = axios
       .get(`https://www.omdbapi.com/?apikey=626b9ad2&s=${value}`)
       .then((response) => {
-        moviesList = response.data.Search;
-        console.log(moviesList);
+        setMoviesList(response.data.Search);
       });
   };
 
@@ -65,9 +63,9 @@ const HomePage: React.FunctionComponent<{}> = (props) => {
         }
       />
       <Page.Content>
-        <Page.Article>
-          <MoviesList />
-        </Page.Article>
+        <Container padded={"xsmall"}>
+          <MoviesList movies={moviesList} />
+        </Container>
       </Page.Content>
       <Page.Footer />
     </Page>
