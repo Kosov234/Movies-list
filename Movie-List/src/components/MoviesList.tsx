@@ -9,7 +9,7 @@ interface MoviesListProps {
 
 function MoviesList({ movies }: MoviesListProps) {
   return (
-    <Grid justifyContent="center" wrap="wrap">
+    <Grid justifyContent="flex-start" wrap="wrap" spacing={8}>
       {movies.map((movie: IMovie) => {
         return (
           <Grid.Item small={3} key={movie.imdbID}>
@@ -17,7 +17,7 @@ function MoviesList({ movies }: MoviesListProps) {
               <Image
                 alt="Default image"
                 src={movie.Poster}
-                style={{ height: "450px", width: "300px" }}
+                style={{ height: "450px", width: "100%" }}
               />
             </RouterLink>
             <h4>

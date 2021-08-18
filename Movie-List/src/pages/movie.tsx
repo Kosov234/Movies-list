@@ -24,7 +24,7 @@ function MoviePage({ match }: RouteComponentProps<MoviePageParams>) {
     <Page>
       <TopBar />
       <Page.Content>
-        <Grid justifyContent="center" spacing={0}>
+        <Grid justifyContent="center" alignItems="center" spacing={0}>
           <Grid.Item small={4}>
             <Container
               padded="small"
