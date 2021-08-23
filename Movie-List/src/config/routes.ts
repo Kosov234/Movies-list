@@ -1,7 +1,14 @@
-import IRoute from "../interfaces/route";
-import AdvancedSearch from "../pages/advancedSearch";
-import HomePage from "../pages/home";
-import MoviePage from "../pages/movie";
+import AdvancedSearch from "../Pages/AdvancedSearch/advancedSearch";
+import HomePage from "../Pages/Home/home";
+import MoviePage from "../Pages/Movie/movie";
+
+export interface IRoute {
+  path: string;
+  name: string;
+  exact: boolean;
+  component: any;
+  props?: any;
+}
 
 const routes: IRoute[] = [
   {
