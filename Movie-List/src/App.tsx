@@ -20,7 +20,7 @@ const App: React.FunctionComponent<{}> = (props) => {
                 path={route.path}
                 exact={route.exact}
                 render={(props: RouteComponentProps<any>) => (
-                  <route.component {...props} {...route.props} />
+                  <route.component {...props} />
                 )}
               />
             );

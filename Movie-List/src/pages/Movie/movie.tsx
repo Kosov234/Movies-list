@@ -68,7 +68,7 @@ const MovieInfo: React.FC<MovieInfoProps> = ({ movie }) => {
           alignItems="center"
         >
           <Image
-            alt="Default image"
+            alt="Movie Image"
             src={
               Poster === "N/A"
                 ? "https://raw.githubusercontent.com/Kosov234/Movie-app/main/images/no_image.png"
