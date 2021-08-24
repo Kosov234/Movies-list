@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Page, Container, Search16, Grid } from "@toptal/picasso";
 import { Form } from "@toptal/picasso-forms";
-import TopBar from "../../Components/TopBar/TopBar";
 import axios from "axios";
-import MoviesList from "../../Components/MoviesList/MoviesList";
 import IFormValues from "../../Types/IFormValues";
-import MoviesListLoader from "../../Components/MoviesList/moviesListLoader";
 import IServerResponse from "../../Types/IServerResponse";
+import TopBar from "../../components/TopBar";
+import MoviesList from "../../components/MoviesList";
+import MoviesListLoader from "../../components/MoviesList/moviesListLoader";
 
 const AdvancedSearch: React.FunctionComponent<{}> = (props) => {
   const [moviesList, setMoviesList] = useState<IServerResponse>();

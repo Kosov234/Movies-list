@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Page, Image, Container, Typography, Grid } from "@toptal/picasso";
-import TopBar from "../../Components/TopBar/TopBar";
+import TopBar from "../../components/TopBar/TopBar";
 import { RouteComponentProps } from "react-router-dom";
 import axios from "axios";
 import IMovie from "../../Types/IMovie";
-import MovieLoader from "./movieLoader";
+import MovieLoader from "../../pages/Movie/movieLoader";
 
 type MoviePageParams = { imdbID: string };
 

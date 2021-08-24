@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Container, Link, Page, Search16 } from "@toptal/picasso";
 import { Form } from "@toptal/picasso-forms";
 import { Link as RouterLink } from "react-router-dom";
-import MoviesList from "../../Components/MoviesList/MoviesList";
+import MoviesList from "../../components/MoviesList/MoviesList";
 import axios from "axios";
 import IFormValues from "../../Types/IFormValues";
-import MoviesListLoader from "../../Components/MoviesList/moviesListLoader";
+import MoviesListLoader from "../../components/MoviesList/moviesListLoader";
 import { Grid } from "@toptal/picasso/Grid/Grid";
 import IServerResponse from "../../Types/IServerResponse";
 
