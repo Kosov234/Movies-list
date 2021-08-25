@@ -11,6 +11,7 @@ function MoviesList({ movies }: MoviesListProps) {
   return (
     <Fragment>
       {movies.map((movie: IMovie) => {
+        console.log(movie.Poster === "N/A");
         return (
           <Grid.Item small={3} key={movie.imdbID}>
             <RouterLink to={`/movies/${movie.imdbID}`}>
