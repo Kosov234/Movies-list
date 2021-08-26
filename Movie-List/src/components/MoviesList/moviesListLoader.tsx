@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 
 function MoviesListLoader() {
   return (
-    <Fragment>
+    <Grid justifyContent="center" wrap="wrap" spacing={8}>
       {[...Array(8)].map((movie, idx) => {
         return (
           <Grid.Item small={3} key={idx}>
@@ -12,7 +12,7 @@ function MoviesListLoader() {
           </Grid.Item>
         );
       })}
-    </Fragment>
+    </Grid>
   );
 }
 

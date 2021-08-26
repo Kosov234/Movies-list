@@ -6,7 +6,6 @@ import MoviesList from "../../components/MoviesList/MoviesList";
 import axios from "axios";
 import IFormValues from "../../Types/IFormValues";
 import MoviesListLoader from "../../components/MoviesList/moviesListLoader";
-import { Grid } from "@toptal/picasso/Grid/Grid";
 import IServerResponse from "../../Types/IServerResponse";
 
 const HomePage: React.FunctionComponent<{}> = () => {
@@ -66,15 +65,13 @@ const HomePage: React.FunctionComponent<{}> = () => {
       />
       <Page.Content>
         <Container padded={"xsmall"}>
-          <Grid justifyContent="center" wrap="wrap" spacing={8}>
-            {loading ? (
-              <MoviesListLoader />
-            ) : moviesList && moviesList.Response === "False" ? (
-              "Movies not found"
-            ) : (
-              moviesList && <MoviesList movies={moviesList.Search} />
-            )}
-          </Grid>
+          {loading ? (
+            <MoviesListLoader />
+          ) : moviesList && moviesList.Response === "False" ? (
+            "Movies not found"
+          ) : (
+            moviesList && <MoviesList movies={moviesList.Search} />
+          )}
         </Container>
       </Page.Content>
       <Page.Footer />

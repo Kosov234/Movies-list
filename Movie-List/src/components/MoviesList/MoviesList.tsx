@@ -9,19 +9,18 @@ interface MoviesListProps {
 
 function MoviesList({ movies }: MoviesListProps) {
   return (
-    <Fragment>
+    <Grid justifyContent="center" wrap="wrap" spacing={8}>
       {movies.map((movie: IMovie) => {
-        console.log(movie.Poster === "N/A");
+        movie.Poster =
+          movie.Poster === "N/A"
+            ? "https://raw.githubusercontent.com/Kosov234/Movie-app/main/images/no_image.png"
+            : movie.Poster;
         return (
           <Grid.Item small={3} key={movie.imdbID}>
             <RouterLink to={`/movies/${movie.imdbID}`}>
               <Image
                 alt="Default image"
-                src={
-                  movie.Poster === "N/A"
-                    ? "https://raw.githubusercontent.com/Kosov234/Movie-app/main/images/no_image.png"
-                    : movie.Poster
-                }
+                src={movie.Poster}
                 style={{ height: "450px", width: "100%" }}
               />
             </RouterLink>
@@ -33,7 +32,7 @@ function MoviesList({ movies }: MoviesListProps) {
           </Grid.Item>
         );
       })}
-    </Fragment>
+    </Grid>
   );
 }
 
